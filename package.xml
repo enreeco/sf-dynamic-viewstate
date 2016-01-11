@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>DynamicViewStateCmpController</members>
+        <members>DynamicViewStateExampleController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>DynamicViewStateCmp</members>
+        <name>ApexComponent</name>
+    </types>
+    <types>
+        <members>DynamicViewStateExample</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>jQuery_Deserialize</members>
+        <name>StaticResource</name>
+    </types>
+    <version>35.0</version>
+</Package>

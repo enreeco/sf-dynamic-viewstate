@@ -1,0 +1,24 @@
+<apex:component controller="DynamicViewStateCmpController" id="dvsc">
+    
+    <apex:attribute assignTo="{!record}" type="Account" name="account" required="true" description="Object to be changed"/> 
+    
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"/>
+    <apex:includeScript value="{!URLFOR($Resource.jQuery_Deserialize)}"/>
+    
+    <apex:dynamicComponent componentValue="{!dynamicComponent}" invokeAfterAction="true"/>
+    <apex:inputHidden value="{!viewState}" id="viewState"/>
+    
+    <script type="text/javascript">
+    jQuery(function(){
+        var closestForm = jQuery('[id$="{!$Component.viewState}"]').closest("form");
+        closestForm.on("submit", function(event) {
+            //serialize esch component except the "viewState" component to avoid recursion
+            jQuery('[id$="{!$Component.viewState}"]').val(jQuery(this).find(':not([id$=viewState])').serialize());
+        });
+        if(closestForm.find('[id$=viewState]').val()) {
+            closestForm.deserialize(jQuery('[id$="{!$Component.viewState}"]').val());
+        }
+	});
+    </script>
+    
+</apex:component>
