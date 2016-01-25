@@ -8,7 +8,7 @@
             
             <c:DynamicViewStateCmp account="{!record}"/>
             
-            <apex:pageBlockSection columns="1">
+            <apex:pageBlockSection columns="1" title="apex:inputField component">
                 <apex:inputField value="{!record.BillingCity}" />
             </apex:pageBlockSection>
             
