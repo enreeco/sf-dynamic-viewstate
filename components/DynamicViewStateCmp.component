@@ -10,6 +10,10 @@
     
     <script type="text/javascript">
     jQuery(function(){
+        //skips this script for testing
+        if({!$CurrentPage.parameters.skip=='1'}){ 
+            return;
+        }
         var closestForm = jQuery('[id$="{!$Component.viewState}"]').closest("form");
         closestForm.on("submit", function(event) {
             //serialize esch component except the "viewState" component to avoid recursion
@@ -18,7 +22,7 @@
         if(closestForm.find('[id$=viewState]').val()) {
             closestForm.deserialize(jQuery('[id$="{!$Component.viewState}"]').val());
         }
-	});
+    });
     </script>
     
 </apex:component>
