@@ -7,6 +7,7 @@ public class DynamicViewStateCmpController {
 
         Component.Apex.PageBlockSection result = new Component.Apex.PageBlockSection();
         result.columns = 1;
+        result.title = 'Dynamic component';
 		List<ApexPages.Component> sectionItems = new List<ApexPages.Component>();
         
         Component.Apex.InputField input = new Component.Apex.InputField();

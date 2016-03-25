@@ -19,7 +19,7 @@
         jQuery.each(map, function (n, v) {
             if(find("[name='" + n + "']").is("input:checkbox,input:radio")) {
                 find("[name='" + n + "']").val(v);
-            } else {
+            } else if(find("[name='" + n + "']").val()==null || find("[name='" + n + "']").val()==''){
                 find("[name='" + n + "']").val(String(v).replace(/\+/g,' '));
             }
         })
